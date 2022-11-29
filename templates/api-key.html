@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Awesome Invoices | api key</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<h1>Get your api key for awesome invoices today</h1>
+{{^apiKey}}
+<form method="post">
+    <div>
+        <textarea name="all-your-data" placeholder="Please enter all your data here"></textarea>
+        {{#error}}
+            <p class="error">{{error}}</p>
+        {{/error}}
+    </div>
+    <div>
+        <button type="submit">Get API Key now!</button>
+    </div>
+</form>
+{{/apiKey}}
+{{#apiKey}}
+<p>Well done! Here is your api key {{apiKey}}</p>
+{{/apiKey}}
+</body>
+</html>
