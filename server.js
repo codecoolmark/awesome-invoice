@@ -41,7 +41,7 @@ app.post('/api-key', async function(request, response) {
 const getApiKey = (request) => request.get('X-API-TOKEN');
 
 app.get('/invoice', async function(request, response) {
-  const template = await fs.readFile('templates/index.html', 'utf-8')
+  const template = await fs.readFile('templates/invoice.html', 'utf-8')
   response.send(mustache.render(template, {}))
 })
 

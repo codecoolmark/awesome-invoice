@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Awesome Invoices | Invoice Endpoint</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<h1>Invoice Endpoint</h1>
+	<p>In order to generate a invoice as pdf send a post request to the <code>/invoice</code> endpoint. 
+	Inside the body of the request you have to send the data for the invoice. The data has
+	to be send as a json object of the following structure:</p>
+	<pre>
+{
+	title: "Invoice",
+	senderName: "Codecool",
+	senderAddress: ["Liechtensteinstraße 210", "1090 Wien"],
+	recipientName: "Student No. 1",
+	recipientAddress: ["Student Street 1", "1010 Wien"],
+	items: [{name: "Fancy Coffee", amount: 10, price: "3.50"}, 
+		{name: "Fancy Pants Coffee", amount: 5, price: "100000"}],
+}
+	</pre>
+	<p>In order to use the API you need to set the <code>X-API-TOKEN</code> header with your api key. 
+	If you don't have a api key you can get one <a href="/api-key">here</a></p>.
+</body>
+</html>
