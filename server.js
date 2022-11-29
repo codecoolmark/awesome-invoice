@@ -49,7 +49,7 @@ app.post('/invoice', async function(request, response, next) {
   try {
     if(getApiKey(request) && apiKeys.validateApiKey(getApiKey(request))) {
       const invoiceData = request.body;
-      response.set('Content-Type', 'application/pdf');
+      //response.set('Content-Type', 'application/pdf');
       response.send(Buffer.from(await pdfs.generateInvoice(invoiceData)))
     } else {
       next(new Error('Invalid or missing api key'))
